@@ -33,7 +33,7 @@ print(promocion[:4])
 inventario.sort()
 print(inventario)
 '''
-7.- Eliminar el ultimo elemento de la lista inventario mostrando el elemento eliminado y la lsta final
+7.- Eliminar el ultimo elemento de la lista inventario mostrando el elemento eliminado y la lsta final XD
 '''
 inventario.pop()
 print(inventario)
