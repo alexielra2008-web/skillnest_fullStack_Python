@@ -1,7 +1,7 @@
 #bucles python
 #for in range
 for i in range(2, 10, 3):
-    print(i)
+   print(i)
 
 for i in range(0, 15, 3):
    print(i)
