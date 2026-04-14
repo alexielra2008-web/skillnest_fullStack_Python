@@ -12,16 +12,15 @@ def numerosDinamicos():
 #Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor de edad (18+). Si tiene menos de 18, indica cuántos años le faltan para la mayoría de edad.
 def verificador_edad():
     campo = input("ingrese su año de nacimiento: ")
-    edad = 2026 - int(campo)
+    edad = 2026 - campo
     if campo == "":
         print("Error")
-    elif int(campo) >= 18:
+    elif campo >= 18:
         print(f"tienes acceso ya que tu edad es: {edad}")
     elif edad > 0 and edad < 18:
         print("no tienes acceso: te faltan {18 - edad} años.")
     else:
         print("ingrese valores validos")
-verificador_edad()
 
 
 #3. Calculadora de Descuentos
@@ -184,8 +183,8 @@ def inventario():
 def listaCompras():
     lista = []
     while True:
-        item = input("Articulo (o terminal)")
-        if item.lower() == "terminal":
+        item = input("Articulo (o terminar)")
+        if item.lower() == "terminar":
             break
         lista.append(item)
     print(f"Ordenada: {sorted(lista)}")
@@ -197,20 +196,27 @@ def listaCompras():
 #El día con la temperatura más baja (asumiendo que el índice 0 es Lunes).
 def analisisTemperatura():
     dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"]
-    temperaturas = []
+    diaSuperior = []
+    total = 0
+    baja = 100
+    diaBaja = ""
+    cant = 0
 
-    for dia in dias:
-        temp = float(input(f"Temperatura del {dia}: "))
-        temperaturas.append(temp)
+    while cant < 7:
+        temps = float(input(f"Ingrese temperatura del dia {dias[cant]}: "))
+        total += temps
 
-    promedio = sum(temperaturas) / len(temperaturas)
-    mayores_25 = len([t for t in temperaturas if t > 25])
-    min_temp = min(temperaturas)
-    dia_min = dias(temperaturas.index(min_temp))
+        if temps < baja and temps < 25:
+            baja = temps
+            diaBaja = dias[cant]
+        elif temps > 25:
+            diaSuperior.append(dias[cant])
 
-    print(f"Promedio semanal: {promedio}")
-    print(f"Dias sobre 25°C: {mayores_25}")
-    print(f"Dia más frios: {min_temp} {min_temp}°C")
+        cant += 1
+
+    print(f"El promedio de las temperaturas fue de {total / 7}")
+    print(f"El dia con la temperatura mas baja fue {diaBaja} con {baja}°")
+    print(f"Los dias mas calurosos fueron {diaSuperior}")
 
 #menu de navegacion para ejercicios
 continuar = True
