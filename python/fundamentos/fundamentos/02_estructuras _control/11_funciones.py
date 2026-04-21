@@ -36,7 +36,8 @@ print(frase) #Imprime: Buenos días Python
 def frasesoña(frase, palabra):
     return f"{frase} {palabra}"
 
-frase = input("Ingrese una frase: ")
-palabra = input("Ingrese una palabra")
-resultadoFrase = frasesoña(frase, palabra)
-print(resultadoFrase)
+def frasesoña():
+    frase = input("Ingrese una frase: ")
+    palabra = input("Ingrese una palabra")
+    resultadoFrase = frasesoña(frase, palabra)
+    print(resultadoFrase)
