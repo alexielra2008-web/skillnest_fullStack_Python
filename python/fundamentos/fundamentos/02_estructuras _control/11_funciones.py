@@ -34,7 +34,7 @@ print(frase) #Imprime: Buenos días Python
 # Crear una función que reciba dos parametros (Una frase + una palabra).
 # Devolver el valor de la frase completa a imprimir
 def frasesoña(frase, palabra):
-    return f"{frase} {palabra}"
+   return f"{frase} {palabra}"
 
 def frasesoña():
     frase = input("Ingrese una frase: ")
