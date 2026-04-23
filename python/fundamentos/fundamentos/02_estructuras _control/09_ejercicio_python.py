@@ -237,54 +237,54 @@ while continuar:
     print("--- 13.- Ejercicio 13 ---")
     print("--- 14.- Ejercicio 14 ---")
     print("--- 15.- Ejercicio 15 ---")
-opcion = input("\n---- Elige una opción: (1-15) (0 para salir) =")
-if opcion == "1":
-    print("\nEjecutando ejercicio 1: ")
-    print(numerosDinamicos())
-elif opcion == "2":
-    print("\nEjecutando ejercicio 2: ")
-    print(verificador_edad())
-elif opcion == "3":
-    print("\nEjecutando ejercicio 3: ")
-    print(aplicarDescuentos())
-elif opcion == "4":
-    print("\nEjecutando ejercicio 4: ")
-    print(clasificadorNum())
-elif opcion == "5":
-    print("\nEjecutando ejercicio 5: ")
-    print(tablaMultiplicar())
-elif opcion == "6":
-    print("\nEjecutando ejercicio 6: ")
-    print(sumatoriaCentinela())
-elif opcion == "7":
-    print("\nEjecutando ejercicio 7: ")
-    print(contadorVocales())
-elif opcion == "8":
-    print("\nEjecutando ejercicio 8: ")
-    print(validacion())
-elif opcion == "9":
-    print("\nEjecutando ejercicio 9: ")
-    print(nombre())
-elif opcion == "10":
-    print("\nEjecutando ejercicio 10: ")
-    print(promedioNotas())
-elif opcion == "11":
-    print("\nEjecutando ejercicio 11: ")
-    print(filtroArreglos())
-elif opcion == "12":
-    print("\nEjecutando ejercicio 12: ")
-    print(buscarElementos())
-elif opcion == "13":
-    print("\nEjecutando ejercicio 13: ")
-    print(inventario())
-elif opcion == "14":
-    print("\nEjecutando ejercicio 14: ")
-    print(listaCompras())
-elif opcion == "15":
-    print("\nEjecutando ejercicio 15: ")
-    print(analisisTemperatura())
-elif opcion == "0":
-    print("Saliendo...")
-    continuar = False
-else:
-    print("Opcion no valida, intenta otra vez")
+    opcion = input("\n---- Elige una opción: (1-15) (0 para salir) =")
+    if opcion == "1":
+        print("\nEjecutando ejercicio 1: ")
+        numerosDinamicos()
+    elif opcion == "2":
+        print("\nEjecutando ejercicio 2: ")
+        verificador_edad()
+    elif opcion == "3":
+        print("\nEjecutando ejercicio 3: ")
+        aplicarDescuentos()
+    elif opcion == "4":
+        print("\nEjecutando ejercicio 4: ")
+        clasificadorNum()
+    elif opcion == "5":
+        print("\nEjecutando ejercicio 5: ")
+        tablaMultiplicar()
+    elif opcion == "6":
+        print("\nEjecutando ejercicio 6: ")
+        sumatoriaCentinela()
+    elif opcion == "7":
+        print("\nEjecutando ejercicio 7: ")
+        contadorVocales()
+    elif opcion == "8":
+        print("\nEjecutando ejercicio 8: ")
+        validacion()
+    elif opcion == "9":
+        print("\nEjecutando ejercicio 9: ")
+        nombre()
+    elif opcion == "10":
+        print("\nEjecutando ejercicio 10: ")
+        promedioNotas()
+    elif opcion == "11":
+        print("\nEjecutando ejercicio 11: ")
+        filtroArreglos()
+    elif opcion == "12":
+        print("\nEjecutando ejercicio 12: ")
+        buscarElementos
+    elif opcion == "13":
+        print("\nEjecutando ejercicio 13: ")
+        inventario()
+    elif opcion == "14":
+        print("\nEjecutando ejercicio 14: ")
+        listaCompras()
+    elif opcion == "15":
+        print("\nEjecutando ejercicio 15: ")
+        analisisTemperatura()
+    elif opcion == "0":
+        print("Saliendo...")
+        continuar = False
+    else:
+        print("Opcion no valida, intenta otra vez")
