@@ -3,12 +3,12 @@
 # y que de esta manera podamos asignarle a los atributos los valores correspondientes.
 
 class Usuario:
-   def __init__(self, nombre, apellido, email):
+   def __init__(self, nombre, apellido, email, limite_credito, saldo_pagar):
         self.nombre = nombre
         self.apellido = apellido
         self.email = email
-        self.limite_credito = 30000
-        self.saldo_pagar = 0
+        self.limite_credito = limite_credito
+        self.saldo_pagar = saldo_pagar
 
 #Creacion de instancias
 miyagi = Usuario("Nariyoshi", "Miyagi", "miyagi@codingdojo.la", 30000, 0)
@@ -30,12 +30,15 @@ Crea una clase Estudiante, y asignale los siguientes atributos:
 '''
 
 class Estudiante:
-   def __init__(self, rut, nombre, apellido, fecha_nac):
+   def __init__(self, rut, nombre, apellido, especialidad, fecha_nac):
         self.rut = rut
         self.nombre = nombre
         self.apellido = apellido
+        self.especialidad = especialidad
         self.fecha_nac = fecha_nac
 
-Jony = Usuario("22.222.222-2", "Jony", "Cartas", "01-01-1970")
-Miguel = Usuario("11.111.111-1", "Miguel", "Ortos", "13-01-1999")
-alexiel = Usuario("22.745.437-7", "Alexiel", "Retamales", "14-06-2008")
+Jony = Estudiante("22.222.222-2", "Jony", "Cartas", "Programacion", "01-01-1970")
+Miguel = Estudiante("11.111.111-1", "Miguel", "Ortos", "Programacion", "13-01-1999")
+Jacobo = Estudiante("22.745.437-7", "Jacobo", "Montes", "Programacion", "14-06-2008")
+
+print(f"hola mi nombre es {Jacobo.nombre} {Jacobo.apellido} y soy {Jacobo.especialidad}")
