@@ -65,7 +65,7 @@ menorr = ""
 mayorr = ""
 #estructura if elif else
 if n1 >= n2 and n1 >= n3:
-    mayorr = num1
+    mayorr = n1
     if n2 <= n3:
         menorr = n2
     else:
