@@ -37,16 +37,53 @@ def ejercicio2():
 #-----------------------------------------------------------------------------------------
 #3-Crear una función que reciba una lista de nombres y
 #muestre únicamente aquellos que tengan más de 5 letras.
-
+def cuentaLetras(lista):
+    resultado = []
+    for nombre in lista:
+        if len(nombre) > 5:
+            resultado.append(nombre)
+        return resultado
 
 def ejercicio3():
-    pass
+    nombres = []
+    cantidad = int(input ("Cuantos nombres quiere colocar: "))
+
+    for i in range(cantidad):
+        nombre = input("Ingrese un nombre: ")
+        print(f"{nombre} agregado con exito en la lista.")
+        nombres.append(nombre)
+        
+    listaNombres = ejercicio3(nombre)
+    print(f"Los nombres con mas de 5 letras son: \n- {("\n- ").join(listaNombres)} ")
+
+ejercicio3()
 
 #-----------------------------------------------------------------------------------------
 #4-Crear una función que reciba una lista de notas (números decimales),
 #calcule el promedio e indique si el estudiante aprueba (promedio mayor o igual a 4.0).
+def listaNotas(notas):
+    lista = 0
+    proedio = 0
+    for i in range(len(notas)):
+        lista += notas[i]
+        promedio = lista / (len(notas))
+
+    if promedio[i] >= 4.0 and promedio[i] <= 7.0:
+        print(f"Felicidades pasaste con {promedio}")
+    elif promedio[i] >= 1.0 and promedio[i] <= 3.9:
+        print(f"Usted no aprueba ya que tiene un {promedio}")
+    else:
+        return"Error"
+
 def ejercicio4():
-    pass
+    largo = int(input("Cuantas notas va a ingresar: "))
+    nota = []
+    for i in range(largo):
+        inp = float(input(f"Ingrese nota {i + 1}"))
+        if inp != "":
+            nota.append(inp)
+    print(listaNotas(nota))
+ejercicio4()
 
 #-----------------------------------------------------------------------------------------
 #5-Crear una función que reciba una lista de precios de productos
