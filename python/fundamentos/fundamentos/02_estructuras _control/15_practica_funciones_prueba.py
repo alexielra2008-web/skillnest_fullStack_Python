@@ -37,6 +37,8 @@ def ejercicio2():
 #-----------------------------------------------------------------------------------------
 #3-Crear una función que reciba una lista de nombres y
 #muestre únicamente aquellos que tengan más de 5 letras.
+
+
 def ejercicio3():
     pass
 
