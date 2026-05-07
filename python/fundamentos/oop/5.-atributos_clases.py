@@ -12,9 +12,9 @@ def validadordeusuario(user, password):
         return False
 
 def enviarDatos():
-    usrname = input("Ingrese su nombre de ususario: ")
+    username = input("Ingrese su nombre de ususario: ")
     password = input("Ingrese su contraseña: ")
-    validador = validadordeusuario(usrname, password)
+    validador = validadordeusuario(username, password)
 
 enviarDatos()
 
@@ -61,6 +61,7 @@ class estudiante:
 # Creación de objetos (Instancias)
 e1 = estudiante("Donovan", 4.0)
 e2 = estudiante("Randy", 6.7)
+e3 = estudiante("Chavo", 1.0)
 
 # Uso de métodos de instancias
 print("== MÉTODO DE INSTANCIAS ==")
@@ -68,4 +69,40 @@ print("== MÉTODO DE INSTANCIAS ==")
 e1.mostrar_info()
 print()
 e2.mostrar_info()
+print()
+e3.mostrar_info()
+print()
+
+#Atributo de la clase
+print("== ATRIBUTO DE CLASE ==")
+print(e1.volegio)
+print(e2.colegio)
+print(e3.colegio)
+print()
+
+#Uso metodo de clase
+print("== METODO DE CLASE ==")
+estudiante.cambiar_colegio("Purkuyen")
+e1.colegio = "VVH" #modifica el atributo de la instancia en la clase
+print(e1.colegio)
+print(e2.colegio)
+print(e3.colegio)
+
+#Contar estudiante
+print("== CONTAR ESTUDIANTES ==")
+print(f"total de estudiantes: {estudiante.cantidad_estudiantes()}")
+
+#Metodo estatico
+print("=== METODO ESTATICO ===")
+
+print(f"¿{e1.nombre} aprueba?")
+print(estudiante.aprobar(e1.nota))
+print()
+
+print(f"¿{e2.nombre} aprueba?")
+print(estudiante.aprobar(e2.nota))
+print()
+
+print(f"¿{e3.nombre} aprueba?")
+print(estudiante.aprobar(e3.nota))
 print()
