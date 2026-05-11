@@ -1,53 +1,55 @@
-class suscripcionStreaming:
-    costos_suscripcion = {"Gratis": 0, "Estandar": 5.99, "Premium": 10.99}
+class MembresiaDigital:
+    tarifas = {"Basico": 0, "Intermedio": 5.99, "Pro": 10.99}
 
-    def __init__(self, usuario, tipo_suscripcion="Gratis"):
-        self.usuario = usuario
-        self.tipo_suscripcion = tipo_suscripcion
-        self.costo_mensual = self.costos_suscripcion[tipo_suscripcion]
-        self.saldo_pendiente = self.costo_mensual
+    def __init__(self, cliente, modalidad="Basico"):
+        self.cliente = cliente
+        self.modalidad = modalidad
+        self.cuota = self.tarifas[modalidad]
+        self.deuda = self.cuota
         print()
 
-    def realizar_pago(self, monto):
-        self.saldo_pendiente = self.saldo_pendiente - monto
-        print("Usuario:", self.usuario)
-        print("Monto pagado:", monto)
-        print("Saldo actual:", self.saldo_pendiente)
+    def procesar_abono(self, cantidad):
+        self.deuda -= cantidad
+        print("Socio:", self.cliente)
+        print("Abonado:", cantidad)
+        print("Deuda remanente:", self.deuda)
 
-    def cambiar_suscripcion(self, nuevo_tipo):
-        self.tipo_suscripcion = nuevo_tipo
-        self.costo_mensual = self.costos_suscripcion[nuevo_tipo]
-        self.saldo_pendiente = self.saldo_pendiente + self.costo_mensual
-        print("Cambio de plan a:", nuevo_tipo)
+    def actualizar_nivel(self, categoria_nueva):
+        self.modalidad = categoria_nueva
+        self.cuota = self.tarifas[categoria_nueva]
+        self.deuda += self.cuota
+        print("Nueva categoria:", categoria_nueva)
         print()
 
-    def ver_contenido_exclusivo(self):
-        if self.tipo_suscripcion == "Gratis":
-            print("Acceso denegado")
+    def validar_acceso_vip(self):
+        if self.modalidad == "Basico":
+            print("Entrada restringida")
         else:
-            print("Acceso permitido para", self.usuario)
+            print("Bienvenido al area VIP,", self.cliente)
             print()
 
-    def mostrar_info_suscripcion(self):
-        print("Nombre:", self.usuario)
-        print("Suscripcion:", self.tipo_suscripcion)
-        print("Costo:", self.costo_mensual)
-        print("Saldo:", self.saldo_pendiente)
+    def reporte_estado(self):
+        print("Titular:", self.cliente)
+        print("Plan actual:", self.modalidad)
+        print("Precio base:", self.cuota)
+        print("Pendiente por pagar:", self.deuda)
 
-user1 = suscripcionStreaming("Ana", "Gratis")
-user1.ver_contenido_exclusivo()
-user1.cambiar_suscripcion("Estandar")
-user1.realizar_pago(5.99)
-user1.mostrar_info_suscripcion()
+# --- Ejecución ---
 
-user2 = suscripcionStreaming("Carlos", "Estandar")
-user2.ver_contenido_exclusivo()
-user2.cambiar_suscripcion("Premium")
-user2.realizar_pago(5.00)
-user2.realizar_pago(10.00)
-user2.mostrar_info_suscripcion()
+persona1 = MembresiaDigital("Ana", "Basico")
+persona1.validar_acceso_vip()
+persona1.actualizar_nivel("Intermedio")
+persona1.procesar_abono(5.99)
+persona1.reporte_estado()
 
-user3 = suscripcionStreaming("Elena", "Premium")
-user3.realizar_pago(2.50)
-user3.ver_contenido_exclusivo()
-user3.mostrar_info_suscripcion()
+persona2 = MembresiaDigital("Carlos", "Intermedio")
+persona2.validar_acceso_vip()
+persona2.actualizar_nivel("Pro")
+persona2.procesar_abono(5.00)
+persona2.procesar_abono(10.00)
+persona2.reporte_estado()
+
+persona3 = MembresiaDigital("Elena", "Pro")
+persona3.procesar_abono(2.50)
+persona3.validar_acceso_vip()
+persona3.reporte_estado()
