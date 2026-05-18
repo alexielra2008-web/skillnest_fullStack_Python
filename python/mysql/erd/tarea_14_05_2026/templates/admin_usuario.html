@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Admin</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-actions">
+            <h2 id="welcomeAdmin">Dashboard - Admin</h2>
+            <div>
+                <a href="Nuevo_usuario.html" class="btn">Nuevo Usuario</a>
+                <button onclick="logout()" class="btn btn-danger">Salir</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>E-mail</th>
+                    <th>Tipo Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="adminUserTable">
+                </tbody>
+        </table>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', renderAdminTable);
+    </script>
+</body>
+</html>
