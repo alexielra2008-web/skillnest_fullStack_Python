@@ -117,3 +117,11 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- Insertar datos en tablas 5 registros
+USE sistema_mensajes:
+INSER INTRO usuarios(nombre_user) VALUES ("Matias")
+INSER INTRO usuarios(nombre_user) VALUES ("Jose")
+INSER INTRO usuarios(nombre_user) VALUES ("Alfredo")
+INSER INTRO usuarios(nombre_user) VALUES ("Wiskas")
+INSER INTRO usuarios(nombre_user) VALUES ("Rodolfo")
