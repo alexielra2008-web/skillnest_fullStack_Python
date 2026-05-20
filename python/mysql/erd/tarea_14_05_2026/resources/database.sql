@@ -117,18 +117,20 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- Insertar datos en tablas 5 registros
-USE sistema_mensajes:
+USE sistema_mensajes;
 
 INSERT INTO roles(nombre_rol, descripcion_rol)
 VALUES("admin", "Control total"),
 ("usuario_comun", "Permiso administrativos basicos"),
 ("invitado", "Usuario temporal con permisos limitados");
-INSERT INTO usuario(nombre_user, password_hash, email, id_roles)
+INSERT INTO usuarios(nombre_usuario, password_hash, email, id_rol)
 VALUES ("FabriBol20", "FabriBol20", "fabriziomendieta@gmail.com", 2),
 ("AlexielGod456", "AlexielGod456", "alexielretamales@gmail.com", 1),
 ("JaviYaoiXD", "JaviYaoiXD", "javierazapata@gmail.com", 3),
 ("Donochad", "Donochad", "donovanzaes@gmail.com", 2),
-("MauriR34", "MauriR34", "mauricio@gmail.com", 3)
+("MauriR34", "MauriR34", "mauricio@gmail.com", 3);
+
+SELECT * FROM usuarios;
 
 INSERT INTO comentarios( ) VALUES();
 INSERT INTO mensajes() VALUES();
