@@ -130,7 +130,51 @@ VALUES ("FabriBol20", "FabriBol20", "fabriziomendieta@gmail.com", 2),
 ("Donochad", "Donochad", "donovanzaes@gmail.com", 2),
 ("MauriR34", "MauriR34", "mauricio@gmail.com", 3);
 
-SELECT * FROM usuarios;
+INSERT INTO comentarios(contenido, created_by, id_usuario)
+VALUES("Hola soy Fabri el boliviano", 1, 1),
+("Hola soy el Alexiel el admin", 2, 2),
+("Hola este es un comentario XD", 3, 3);
+SELECT * FROM comentarios;
 
-INSERT INTO comentarios( ) VALUES();
-INSERT INTO mensajes() VALUES();
+INSERT INTO mensajes(contenido, created_by, emisor, receptor)
+VALUES("When haces tus memes por mySQL", 1, 1, 3),
+("But te terminan bajando la nota", 2, 2, 3),
+("XDDDDD", 3, 3, 2);
+SELECT * FROM mensajes;
+
+-- Consultas simples con condicion
+-- where en mysql
+-- mostrar mensajes donde el remitente sea randy
+SELECT contenido, emisor
+FROM mensajes
+WHERE emisor = 1; -- WHERE aplica condicion sobre consulta
+
+-- mostrar usuario que estan activos (deleted 0)
+SELECT nombre_usuario, email, id_rol
+FROM usuarios
+WHERE deleted = 0;
+
+-- borrar usuario (si solo dejamos el set deleted borramos todo)
+UPDATE usuarios
+SET deleted = 1
+WHERE id_usuario = 1;
+
+-- recuperar usuario
+UPDATE usuarios
+SET deleted = 0
+WHERE id_usuario = 1;
+
+-- mostrar roles de usuario (nombre, descripcion)
+SELECT nombre_rol, descripcion_rol
+FROM roles
+WHERE deleted = 0;
+
+-- eliminar roles
+UPDATE roles
+SET deleted = 1
+WHERE id_rol in (2, 3);
+
+-- recuperar rol
+UPDATE roles
+SET deleted = 0
+WHERE id_rol = 2;
