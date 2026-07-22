@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>Archivos Estáticos</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div>
+
+    <img src="{{ url_for('static', filename='images/Pokelogo.png') }}" alt="logo">
+    <h1>Pokédex</h1>
+
+    </div>
+
+    <p>
+
+        Esta página utilizará una hoja de estilos ubicada
+        en la carpeta <strong>static</strong>.
+
+    </p>
+
+    
+</body>
+
+</html>
