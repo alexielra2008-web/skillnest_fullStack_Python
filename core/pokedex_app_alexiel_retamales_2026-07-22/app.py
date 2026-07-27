@@ -7,7 +7,7 @@ pokedex = [
     {"id": 1, "nombre": "Bulbasaur", "tipo": "Planta/Veneno", "imagen": "bulbasaur.png", "poder": 45, "altura": "0.7m", "peso": "6.9kg"},
     {"id": 4, "nombre": "Charmander", "tipo": "Fuego", "imagen": "charmander.png", "poder": 39, "altura": "0.6m", "peso": "8.5kg"},
     {"id": 7, "nombre": "Squirtle", "tipo": "Agua", "imagen": "squirtle.png", "poder": 44, "altura": "0.5m", "peso": "9.0kg"},
-    {"id": 25, "nombre": "Pikachu", "tipo": "Eléctrico", "imagen": "pikachu.png", "poder": 35, "altura": "0.4m", "peso": "6.0kg"},
+    {"id": 25, "nombre": "Pikachu", "tipo": "Electrico", "imagen": "pikachu.png", "poder": 35, "altura": "0.4m", "peso": "6.0kg"},
     {"id": 39, "nombre": "Jigglypuff", "tipo": "Normal/Hada", "imagen": "jigglypuff.png", "poder": 115, "altura": "0.5m", "peso": "5.5kg"},
     {"id": 52, "nombre": "Meowth", "tipo": "Normal", "imagen": "meowth.png", "poder": 40, "altura": "0.4m", "peso": "4.2kg"},
     {"id": 54, "nombre": "Psyduck", "tipo": "Agua", "imagen": "psyduck.png", "poder": 50, "altura": "0.8m", "peso": "19.6kg"},
@@ -18,6 +18,7 @@ pokedex = [
 
 # Mostrar todos
 @app.route("/")
+@app.route("/pokemon")
 def inicio():
     return render_template(
         "pokemon.html",
@@ -64,7 +65,7 @@ def pokemon_cantidad(cantidad):
     )
 
 # Página 404 personalizada
-def pokemon_no_encontrado(mensaje):
+def pokemon_no_encontrado(mensaje: str):
     return render_template(
         "404.html",
         mensaje=mensaje

@@ -64,7 +64,7 @@ body{
 
 /* ======== NUMERO ======== */
 
-.numero{
+.numero {
 
     position:absolute;
 
@@ -187,5 +187,87 @@ body{
         height:130px;
 
     }
+
+}
+
+/* ===== TIPOS POKEMON ===== */
+
+
+.tipo-planta{
+
+    background:#78C850 !important;
+    color:white;
+
+}
+
+
+.tipo-veneno{
+
+    background:#A040A0 !important;
+    color:white;
+
+}
+
+
+.tipo-fuego{
+
+    background:#F08030 !important;
+    color:white;
+
+}
+
+
+.tipo-agua{
+
+    background:#6890F0 !important;
+    color:white;
+
+}
+
+
+.tipo-electrico{
+
+    background:#F8D030 !important;
+    color:black;
+
+}
+
+
+.tipo-normal{
+
+    background:#A8A878 !important;
+    color:white;
+
+}
+
+
+.tipo-hada{
+
+    background:#EE99AC !important;
+    color:white;
+
+}
+
+
+.tipo-fantasma{
+
+    background:#705898 !important;
+    color:white;
+
+}
+
+
+.tipo-roca{
+
+    background:#B8A038 !important;
+    color:white;
+
+}
+
+
+.tipo-tierra{
+
+    background:#E0C068 !important;
+    color:black;
 
 }
