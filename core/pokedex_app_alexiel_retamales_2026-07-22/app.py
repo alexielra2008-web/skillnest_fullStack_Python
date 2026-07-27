@@ -16,23 +16,60 @@ pokedex = [
     {"id": 143, "nombre": "Snorlax", "tipo": "Normal", "imagen": "snorlax.png", "poder": 160, "altura": "2.1m", "peso": "460.0kg"}
 ]
 
-
-# Ruta para mostrar todos los Pokémon
+# Mostrar todos
 @app.route("/")
 def inicio():
+    return render_template(
+        "pokemon.html",
+        pokemons=pokedex,
+        titulo="Todos los Pokémon"
+    )
 
-    return render_template("pokemon.html")
+# Buscar por nombre
+@app.route("/pokemon/<nombre>")
+def pokemon_nombre(nombre):
 
-# Ruta para mostrar un Pokémon por nombre
+    for pokemon in pokedex:
+        if pokemon["nombre"].lower() == nombre.lower():
+            return render_template(
+                "pokemon.html",
+                pokemons=[pokemon],
+                titulo=f"Pokémon: {pokemon['nombre']}"
+            )
 
-# Ruta para mostrar un Pokémon por número en la Pokédex
+    return pokemon_no_encontrado(nombre)
 
-# Ruta para mostrar una cantidad específica de Pokémon
+# Buscar por número
+@app.route("/numero/<int:id>")
+def pokemon_numero(id):
 
-# Error cuando no se encuentra un Pokémon
-def pokemon_no_encontrado(mensaje: str):
-    """Función simple para renderizar la página 404 con un mensaje."""
-    return render_template("404.html", mensaje=mensaje)
+    for pokemon in pokedex:
+        if pokemon["id"] == id:
+            return render_template(
+                "pokemon.html",
+                pokemons=[pokemon],
+                titulo=f"Pokémon #{id}"
+            )
+
+    return pokemon_no_encontrado(id)
+
+# Mostrar cierta cantidad
+@app.route("/cantidad/<int:cantidad>")
+def pokemon_cantidad(cantidad):
+
+    return render_template(
+        "pokemon.html",
+        pokemons=pokedex[:cantidad],
+        titulo=f"Primeros {cantidad} Pokémon"
+    )
+
+# Página 404 personalizada
+def pokemon_no_encontrado(mensaje):
+    return render_template(
+        "404.html",
+        mensaje=mensaje
+    ), 404
+
 
 if __name__ == "__main__":
     app.run(debug=True)
