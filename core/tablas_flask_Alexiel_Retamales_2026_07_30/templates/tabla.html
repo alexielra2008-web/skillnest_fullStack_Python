@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataformas Digitales</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos de interfaz generales -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Estilos personalizados apuntando a tu carpeta static/css/ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light py-5">
+
+    <div class="container container-custom">
+        <!-- Encabezado Principal -->
+        <div class="text-center mb-4">
+            <h1 class="text-primary fw-bold display-5 mb-2">
+                <i class="fa-solid fa-table-cells-large text-primary me-2"></i>Plataformas Digitales
+            </h1>
+            <p class="text-secondary fs-5">Visualización de datos de las principales plataformas digitales</p>
+        </div>
+
+        <!-- Panel de Filtros y Ordenamiento -->
+        <div class="card shadow-sm border-0 mb-4 p-4">
+            <h6 class="fw-bold mb-3 text-dark">
+                <i class="fa-solid fa-filter me-2"></i>Filtros y Ordenamiento
+            </h6>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label text-secondary small fw-semibold">Filtrar por país:</label>
+                    <select class="form-select text-muted">
+                        <option selected>Todos los países</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label text-secondary small fw-semibold">Ordenar por:</label>
+                    <select class="form-select text-muted">
+                        <option selected>Nombre</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label text-secondary small fw-semibold">Dirección:</label>
+                    <select class="form-select text-muted">
+                        <option selected>Ascendente</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Datos -->
+        <div class="card shadow-sm border-0 p-3">
+            {% if plataformas and plataformas|length > 0 %}
+                <div class="table-responsive">
+                    <table class="table align-middle custom-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre <i class="fa-solid fa-caret-down ms-1"></i></th>
+                                <th scope="col">Usuarios</th>
+                                <th scope="col">Año Fundación</th>
+                                <th scope="col">País</th>
+                                <th scope="col">Detalles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in plataformas %}
+                            <tr>
+                                <td class="fw-bold text-dark d-flex align-items-center">
+                                    <!-- Renderizado condicional adaptado a los nombres reales de tus archivos .png y .png.png -->
+                                    {% if p.nombre == 'Spotify' %}
+                                        <img src="{{ url_for('static', filename='images/spotify.png.png') }}" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;">
+                                    {% elif p.nombre == 'Twitch' %}
+                                        <img src="{{ url_for('static', filename='images/twitch.png.png') }}" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;">
+                                    {% elif p.nombre == 'YouTube' %}
+                                        <img src="{{ url_for('static', filename='images/youtube.png.png') }}" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;">
+                                    {% else %}
+                                        <img src="{{ url_for('static', filename='images/' + p.nombre.lower() + '.png') }}" class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;">
+                                    {% endif %}
+                                    {{ p.nombre }}
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary px-3 py-2 fw-semibold rounded-pill custom-badge-user">
+                                        {{ p.usuarios }}
+                                    </span>
+                                </td>
+                                <td class="text-secondary fw-medium">{{ p.fundado }}</td>
+                                <td>
+                                    <span class="badge bg-secondary px-3 py-2 fw-medium rounded text-wrap custom-badge-country">
+                                        {{ p.pais }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-info btn-sm rounded custom-btn-info">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-end text-muted small mt-2 px-2">
+                    Mostrando {{ plataformas|length }} plataformas
+                </div>
+            {% else %}
+                <div class="alert alert-warning text-center my-3" role="alert">
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i> No hay datos disponibles para mostrar en este momento.
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Pie de página -->
+        <div class="text-center text-muted small mt-5">
+            <p class="mb-1">Visualización de datos desarrollada con Flask y Bootstrap.</p>
+            <p>Los datos mostrados son ficticios para fines educativos.</p>
+        </div>
+    </div>
+</body>
+</html>
