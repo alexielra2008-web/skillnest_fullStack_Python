@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Pedido - Mercado de Frutas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
+                🍎 Mercado de Frutas
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('index') }}">Inicio</a>
+                <a class="nav-link" href="{{ url_for('frutas') }}">Catálogo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card shadow-sm max-width-checkout mx-auto">
+            
+            <!-- Banner de Confirmación -->
+            <div class="card-header bg-success text-white text-center py-4">
+                <div class="mb-2">
+                    <span class="fs-1">✓</span>
+                </div>
+                <h2 class="fw-bold mb-1">¡Pedido Confirmado!</h2>
+                <p class="mb-0 text-light opacity-75">Gracias por tu compra</p>
+            </div>
+
+            <div class="card-body p-4">
+                
+                <!-- Información del Cliente -->
+                <h5 class="text-success fw-bold border-bottom pb-2 mb-3">Información del Cliente</h5>
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <p class="mb-1"><strong>Nombre:</strong> {{ nombre }}</p>
+                        <p class="mb-0"><strong>Email:</strong> {{ email }}</p>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <p class="mb-1"><strong>Dirección de entrega:</strong></p>
+                        <p class="mb-0">{{ direccion }}</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Pedido -->
+                <h5 class="text-success fw-bold border-bottom pb-2 mb-3">Detalle del Pedido</h5>
+
+                <!-- REQUISITO #5: Texto con el total de frutas seleccionadas -->
+                <div class="alert alert-info text-center fw-bold py-2 my-3" role="alert">
+                    Total de frutas en tu pedido: {{ total_frutas }}
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr class="table-light">
+                                <th scope="col">Fruta</th>
+                                <th scope="col" class="text-center">Precio</th>
+                                <th scope="col" class="text-center">Cantidad</th>
+                                <th scope="col" class="text-end">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td>
+                                    <img src="{{ url_for('static', filename='images/' + item.imagen) }}" alt="{{ item.nombre }}" width="35" class="me-2">
+                                    {{ item.nombre }}
+                                </td>
+                                <td class="text-center">${{ "%.2f"|format(item.precio) }}</td>
+                                <td class="text-center">{{ item.cantidad }}</td>
+                                <td class="text-end fw-bold">${{ "%.2f"|format(item.subtotal) }}</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">No has seleccionado ninguna fruta.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-end fw-bold fs-5">Total:</td>
+                                <td class="text-end fw-bold fs-5 text-success">${{ "%.2f"|format(total_pagar) }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Mensaje de Entrega -->
+                <div class="bg-light p-3 rounded mt-4 d-flex align-items-center">
+                    <span class="fs-2 me-3">🚚</span>
+                    <div>
+                        <strong class="d-block">Información de entrega</strong>
+                        <small class="text-muted">Tu pedido será entregado en un plazo de 24-48 horas.</small>
+                    </div>
+                </div>
+
+                <!-- Botón Volver -->
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary px-4">
+                        🏠 Volver a la tienda
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

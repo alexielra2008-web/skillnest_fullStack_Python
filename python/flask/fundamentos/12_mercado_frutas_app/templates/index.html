@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado de Frutas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
+                🍎 Mercado de Frutas
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="{{ url_for('index') }}">Inicio</a>
+                <a class="nav-link" href="{{ url_for('frutas') }}">Catálogo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-secondary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Frutas Frescas a Tu Puerta</h1>
+            <p class="lead">Selecciona tus frutas favoritas y realiza tu pedido</p>
+        </div>
+    </div>
+
+    <!-- Formulario Principal -->
+    <div class="container my-5">
+        <form action="{{ url_for('checkout') }}" method="POST">
+            <div class="row g-4">
+                
+                <!-- Columna Frutas -->
+                <div class="col-lg-8">
+                    <div class="card shadow-sm p-4">
+                        <h4 class="fw-bold mb-4">Selecciona tus frutas</h4>
+                        
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            
+                            <!-- Manzana -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/manzana.png') }}" alt="Manzana" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Manzana</h5>
+                                    <p class="text-success fw-bold mb-1">$2.5</p>
+                                    <small class="text-muted d-block mb-3">Fruta dulce y crujiente, rica en fibra y vitamina C.</small>
+                                    <input type="number" name="manzana" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Plátano -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/platano.jpg') }}" alt="Plátano" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Plátano</h5>
+                                    <p class="text-success fw-bold mb-1">$1.8</p>
+                                    <small class="text-muted d-block mb-3">Fruta energética rica en potasio, perfecta para deportistas.</small>
+                                    <input type="number" name="platano" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Naranja -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/naranja.webp') }}" alt="Naranja" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Naranja</h5>
+                                    <p class="text-success fw-bold mb-1">$3.0</p>
+                                    <small class="text-muted d-block mb-3">Cítrico jugoso con alto contenido de vitamina C y antioxidantes.</small>
+                                    <input type="number" name="naranja" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Fresa -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/fresa.png') }}" alt="Fresa" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Fresa</h5>
+                                    <p class="text-success fw-bold mb-1">$4.5</p>
+                                    <small class="text-muted d-block mb-3">Baya dulce y aromática, rica en antioxidantes y vitamina C.</small>
+                                    <input type="number" name="fresa" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Uva -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/uva.png') }}" alt="Uva" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Uva</h5>
+                                    <p class="text-success fw-bold mb-1">$3.8</p>
+                                    <small class="text-muted d-block mb-3">Fruta pequeña y dulce, ideal para snacks y postres.</small>
+                                    <input type="number" name="uva" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Piña -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/pina.jpg') }}" alt="Piña" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Piña</h5>
+                                    <p class="text-success fw-bold mb-1">$5.0</p>
+                                    <small class="text-muted d-block mb-3">Fruta tropical dulce y ácida, con propiedades antiinflamatorias.</small>
+                                    <input type="number" name="pina" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Sandía -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/sandia.jpg') }}" alt="Sandía" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Sandía</h5>
+                                    <p class="text-success fw-bold mb-1">$4.2</p>
+                                    <small class="text-muted d-block mb-3">Fruta refrescante, compuesta en un 90% de agua, ideal para el verano.</small>
+                                    <input type="number" name="sandia" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Mango -->
+                            <div class="col">
+                                <div class="border rounded p-3 h-100 text-center">
+                                    <img src="{{ url_for('static', filename='images/mango.jpg') }}" alt="Mango" class="img-fluid-custom mb-2">
+                                    <h5 class="fw-bold mb-1">Mango</h5>
+                                    <p class="text-success fw-bold mb-1">$3.5</p>
+                                    <small class="text-muted d-block mb-3">Fruta tropical dulce y aromática, rica en vitaminas A y C.</small>
+                                    <input type="number" name="mango" class="form-control text-center" value="0" min="0">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Información de Contacto -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm p-4 sticky-top text-start" style="top: 20px;">
+                        <h4 class="fw-bold mb-4">Información de Contacto</h4>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="direccion" class="form-label">Dirección de entrega</label>
+                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg">🛒 Crear Orden</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
