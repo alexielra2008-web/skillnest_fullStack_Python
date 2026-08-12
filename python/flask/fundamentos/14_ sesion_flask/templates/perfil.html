@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>👤 Perfil de Usuario</h1>
+        <hr>
+        <p><strong>Nombre:</strong> {{ session.get("nombre_usuario", "Desconocido") }}</p>
+        <p><strong>E-mail:</strong> {{ session.get("email_usuario", "Desconocido") }}</p>
+        <p><strong>Ciudad:</strong> {{ session.get("ciudad_usuario", "Desconocido") }}</p>
+        <hr>
+        <div class="nav-links">
+            <a href="{{ url_for('mostrar_usuario') }}">Atrás</a> |
+            <a href="{{ url_for('limpiar') }}" style="color: red;">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>
