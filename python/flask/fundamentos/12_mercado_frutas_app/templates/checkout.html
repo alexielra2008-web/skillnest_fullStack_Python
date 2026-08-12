@@ -23,10 +23,10 @@
     </nav>
 
     <div class="container my-5">
-        <div class="card shadow-sm max-width-checkout mx-auto">
+        <div class="card shadow-sm max-width-checkout mx-auto border-0">
             
             <!-- Banner de Confirmación -->
-            <div class="card-header bg-success text-white text-center py-4">
+            <div class="card-header bg-success text-white text-center py-4 border-0">
                 <div class="mb-2">
                     <span class="fs-1">✓</span>
                 </div>
@@ -52,7 +52,7 @@
                 <!-- Detalle del Pedido -->
                 <h5 class="text-success fw-bold border-bottom pb-2 mb-3">Detalle del Pedido</h5>
 
-                <!-- REQUISITO #5: Texto con el total de frutas seleccionadas -->
+                <!-- Requisito #5: Texto con el total de frutas seleccionadas -->
                 <div class="alert alert-info text-center fw-bold py-2 my-3" role="alert">
                     Total de frutas en tu pedido: {{ total_frutas }}
                 </div>
@@ -71,7 +71,7 @@
                             {% for item in items %}
                             <tr>
                                 <td>
-                                    <img src="{{ url_for('static', filename='images/' + item.imagen) }}" alt="{{ item.nombre }}" width="35" class="me-2">
+                                    <img src="{{ url_for('static', filename='images/' + item.imagen) }}" alt="{{ item.nombre }}" width="35" class="me-2 rounded">
                                     {{ item.nombre }}
                                 </td>
                                 <td class="text-center">${{ "%.2f"|format(item.precio) }}</td>

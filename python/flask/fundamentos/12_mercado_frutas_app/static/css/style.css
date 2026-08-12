@@ -400,3 +400,36 @@ body {
 .btn {
     border-radius: 5px;
 }
+
+/* Control de tamaño para imágenes de frutas */
+.img-fluid-custom {
+    max-height: 100px;
+    height: 100px;
+    object-fit: contain;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Alineación limpia y altura uniforme de tarjetas de fruta */
+.fruit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* Limitación de ancho máximo en pantalla de checkout */
+.max-width-checkout {
+    max-width: 800px;
+}
+
+/* Ajuste de texto de descripción breve */
+.style-desc {
+    font-size: 0.8rem;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

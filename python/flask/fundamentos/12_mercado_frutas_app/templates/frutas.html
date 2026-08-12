@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body class="bg-light">
 
     <!-- Header Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -26,90 +26,90 @@
     <div class="bg-secondary text-white text-center py-5">
         <div class="container">
             <h1 class="display-4 fw-bold">Nuestras Frutas</h1>
-            <p class="lead">Descubre nuestra variedad de frutas frescas disponibles</p>
+            <p class="lead mb-0">Descubre nuestra variedad de frutas frescas disponibles</p>
         </div>
     </div>
 
     <!-- Catálogo de Frutas -->
     <div class="container my-5">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
             
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/manzana.png') }}" class="card-img-top p-3 img-fluid-custom" alt="Manzana">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/manzana.png') }}" class="img-fluid-custom mb-3" alt="Manzana">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Manzana</h5>
-                        <p class="card-text text-warning fw-bold">$2.5</p>
+                        <p class="card-text text-warning fw-bold mb-0">$2.5</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/platano.jpg') }}" class="card-img-top p-3 img-fluid-custom" alt="Plátano">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/platano.jpg') }}" class="img-fluid-custom mb-3" alt="Plátano">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Plátano</h5>
-                        <p class="card-text text-warning fw-bold">$1.8</p>
+                        <p class="card-text text-warning fw-bold mb-0">$1.8</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/naranja.webp') }}" class="card-img-top p-3 img-fluid-custom" alt="Naranja">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/naranja.webp') }}" class="img-fluid-custom mb-3" alt="Naranja">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Naranja</h5>
-                        <p class="card-text text-warning fw-bold">$3.0</p>
+                        <p class="card-text text-warning fw-bold mb-0">$3.0</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/fresa.png') }}" class="card-img-top p-3 img-fluid-custom" alt="Fresa">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/fresa.png') }}" class="img-fluid-custom mb-3" alt="Fresa">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Fresa</h5>
-                        <p class="card-text text-warning fw-bold">$4.5</p>
+                        <p class="card-text text-warning fw-bold mb-0">$4.5</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/uva.png') }}" class="card-img-top p-3 img-fluid-custom" alt="Uva">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/uva.png') }}" class="img-fluid-custom mb-3" alt="Uva">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Uva</h5>
-                        <p class="card-text text-warning fw-bold">$3.8</p>
+                        <p class="card-text text-warning fw-bold mb-0">$3.8</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/pina.jpg') }}" class="card-img-top p-3 img-fluid-custom" alt="Piña">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/pina.jpg') }}" class="img-fluid-custom mb-3" alt="Piña">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Piña</h5>
-                        <p class="card-text text-warning fw-bold">$5.0</p>
+                        <p class="card-text text-warning fw-bold mb-0">$5.0</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/sandia.jpg') }}" class="card-img-top p-3 img-fluid-custom" alt="Sandía">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/sandia.jpg') }}" class="img-fluid-custom mb-3" alt="Sandía">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Sandía</h5>
-                        <p class="card-text text-warning fw-bold">$4.2</p>
+                        <p class="card-text text-warning fw-bold mb-0">$4.2</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card h-100 shadow-sm overflow-hidden">
-                    <img src="{{ url_for('static', filename='images/mango.jpg') }}" class="card-img-top p-3 img-fluid-custom" alt="Mango">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="{{ url_for('static', filename='images/mango.jpg') }}" class="img-fluid-custom mb-3" alt="Mango">
+                    <div class="card-body p-0">
                         <h5 class="card-title fw-bold">Mango</h5>
-                        <p class="card-text text-warning fw-bold">$3.5</p>
+                        <p class="card-text text-warning fw-bold mb-0">$3.5</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">🛒 Hacer un pedido</a>
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4">🛒 Hacer un pedido</a>
         </div>
     </div>
 
