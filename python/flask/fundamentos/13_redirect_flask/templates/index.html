@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas - 13_redirect_flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>📊 Contador de Visitas</h1>
+
+        <!-- Mostrar Visitas -->
+        <div class="card counter-card">
+            <h2>Has visitado esta página:</h2>
+            <p class="counter-number">{{ visitas }}</p>
+            <span>veces</span>
+        </div>
+
+        <!-- Mostrar Reinicios (Bonus Oro) -->
+        <div class="card reset-card">
+            <p>El contador se ha reiniciado: <strong>{{ reinicios }}</strong> veces.</p>
+        </div>
+
+        <!-- Botones de Acción (Nivel 1 y 2) -->
+        <div class="actions">
+            <!-- Incremento +2 -->
+            <form action="{{ url_for('incrementar_dos') }}" method="POST">
+                <button type="submit" class="btn btn-primary">+2 Visitas</button>
+            </form>
+
+            <!-- Reiniciar a 0 -->
+            <form action="{{ url_for('reiniciar') }}" method="POST">
+                <button type="submit" class="btn btn-warning">Reiniciar a 0</button>
+            </form>
+
+            <!-- Destruir Sesión -->
+            <a href="{{ url_for('destruir_sesion') }}" class="btn btn-danger">Destruir Sesión</a>
+        </div>
+
+        <!-- Formulario Personalizado (Bonus Oro) -->
+        <div class="card form-card">
+            <h3>Aumentar cantidad personalizada</h3>
+            <form action="{{ url_for('incrementar_custom') }}" method="POST" class="inline-form">
+                <input type="number" name="cantidad" placeholder="Ej. 5" min="1" required>
+                <button type="submit" class="btn btn-success">Sumar Visitas</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
