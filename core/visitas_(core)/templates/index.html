@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <!-- Vinculación del archivo CSS en Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Contador de Visitas</h1>
+
+        <!-- Bloque de estadísticas -->
+        <div class="stats-container">
+            <div class="stat-box highlight">
+                <span class="stat-label">Visitas</span>
+                <span class="stat-number blue">{{ visitas }}</span>
+            </div>
+            <div class="stat-box reset-count">
+                <span class="stat-label">Reinicios</span>
+                <span class="stat-number red">{{ reinicios }}</span>
+            </div>
+        </div>
+
+        <!-- Botones Nivel 2 / Bonus de Plata -->
+        <div class="actions-grid">
+            <form action="/sumar_dos" method="POST">
+                <button type="submit" class="btn btn-primary">+2 Visitas</button>
+            </form>
+
+            <form action="/reiniciar" method="POST">
+                <button type="submit" class="btn btn-danger">Reiniciar</button>
+            </form>
+        </div>
+
+        <!-- Formulario Nivel 3 / Bonus de Oro -->
+        <form action="/incrementar_personalizado" method="POST" class="custom-form">
+            <label for="cantidad">Sumar cantidad específica</label>
+            <div class="input-group">
+                <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ej: 5" required>
+                <button type="submit" class="btn btn-primary" style="width: auto;">Agregar</button>
+            </div>
+        </form>
+
+        <!-- Destruir Sesión Nivel 1 -->
+        <a href="/destruir_sesion" class="destroy-link">Eliminar todas las variables de sesión</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+:root {
+    --negro-fondo: #0a0c10;
+    --negro-tarjeta: #141824;
+    --azul-imperial: #0047AB;
+    --azul-imperial-hover: #003380;
+    --rojo-carmesi: #990000;
+    --rojo-carmesi-hover: #770000;
+    --texto-principal: #f0f4f8;
+    --texto-secundario: #a0aec0;
+    --borde-tarjeta: #1e2638;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--negro-fondo);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tarjeta Centralizada */
+.card {
+    background-color: var(--negro-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
+                0 0 20px rgba(0, 71, 171, 0.15);
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: var(--texto-principal);
+    border-bottom: 2px solid var(--azul-imperial);
+    padding-bottom: 12px;
+}
+
+/* Sección de Estadísticas */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.stat-box.highlight {
+    border-bottom: 3px solid var(--azul-imperial);
+}
+
+.stat-box.reset-count {
+    border-bottom: 3px solid var(--rojo-carmesi);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.stat-number.blue {
+    color: #3b82f6;
+}
+
+.stat-number.red {
+    color: #ef4444;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Formularios y Botones */
+.actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--azul-imperial);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-imperial-hover);
+}
+
+.btn-danger {
+    background-color: var(--rojo-carmesi);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: var(--rojo-carmesi-hover);
+}
+
+/* Formulario de incremento personalizado */
+.custom-form {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px 12px;
+    background-color: var(--negro-fondo);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 6px;
+    color: var(--texto-principal);
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--azul-imperial);
+}
+
+/* Enlace de destrucción de sesión */
+.destroy-link {
+    display: inline-block;
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.destroy-link:hover {
+    color: var(--rojo-carmesi);
+    text-decoration: underline;
+}
