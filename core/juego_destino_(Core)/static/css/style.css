@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0d1b;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 8px, transparent 8px),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.12) 12px, transparent 12px),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.15) 4px, transparent 4px);
+    background-size: 150px 150px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+    background: linear-gradient(180deg, #1d1b3a 0%, #292652 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.icon-badge {
+    width: 45px;
+    height: 45px;
+    background-color: #6a1b9a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto;
+    font-size: 20px;
+    color: #fff;
+}
+
+.card-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-header p {
+    font-size: 0.85rem;
+    color: #b0b3c6;
+}
+
+.card-body {
+    padding: 25px 30px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.input-container span {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.input-container input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.help-text {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.orb-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.orb {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #a8c0ff, #3f2b96);
+    box-shadow: 0 0 20px rgba(168, 192, 255, 0.6);
+}
+
+.btn-submit, .btn-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover, .btn-action:hover {
+    background-color: #4b00b5;
+}
+
+.prediction-box {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.star-icon {
+    color: #22c55e;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    color: #4c1d95;
+    margin-bottom: 8px;
+}
+
+.color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 8px auto;
+    background-color: var(--bg-color, green);
+}
+
+.lucky-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lucky-title {
+    color: #6b21a8;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.number-badge {
+    width: 50px;
+    height: 50px;
+    background-color: #6200ee;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 8px auto;
+}
+
+.age-box {
+    background-color: #f8f9fa;
+    border-left: 3px solid #6b21a8;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 15px;
+}

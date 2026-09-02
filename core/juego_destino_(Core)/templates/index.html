@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Juego del Destino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="icon-badge">🌙</div>
+            <h1>El Juego del Destino</h1>
+            <p>Descubre qué te depara el futuro</p>
+        </div>
+        
+        <div class="card-body">
+            <form action="/enviar" method="POST">
+                <div class="form-group">
+                    <div class="input-container">
+                        <span>👤</span>
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span>📅</span>
+                        <input type="number" name="edad" placeholder="Tu edad" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span>🎨</span>
+                        <input type="text" name="color" placeholder="Tu color favorito" required>
+                    </div>
+                    <div class="help-text">Ej. rojo, azul, verde, morado, amarillo...</div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span>🐾</span>
+                        <input type="text" name="animal" placeholder="Tu animal favorito" required>
+                    </div>
+                    <div class="help-text">Ej. perro, gato, águila, león, delfín...</div>
+                </div>
+
+                <div class="orb-container">
+                    <div class="orb"></div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    🖊️ Revelar mi destino
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Destino Revelado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="icon-badge">⚙️</div>
+            <h1>Tu Destino ha sido Revelado</h1>
+            <p>Las estrellas han hablado, {{ session['nombre'] }}</p>
+        </div>
+
+        <div class="card-body">
+            <div class="prediction-box">
+                <div class="star-icon">★</div>
+                <p>{{ session['prediccion'] }}</p>
+            </div>
+
+            <div class="grid-info">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span>🎨</span> Tu Color
+                    </div>
+                    <div class="color-dot" style="--bg-color: {{ session['color'] }};"></div>
+                    <p>Tu preferencia por el color <strong>{{ session['color'] }}</strong> {{ afinidad_color }}</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span>🐾</span> Tu Animal
+                    </div>
+                    <p style="margin-top: 15px;">Tu conexión con el <strong>{{ session['animal'] }}</strong> simboliza tu naturaleza de independencia y misterio.</p>
+                </div>
+            </div>
+
+            <div class="lucky-section">
+                <div class="lucky-title">Tu número de la suerte</div>
+                <div class="number-badge">{{ session['numero_suerte'] }}</div>
+                <div class="help-text">Este número te acompañará en momentos importantes.</div>
+            </div>
+
+            <div class="age-box">
+                A tus <strong>{{ session['edad'] }} años</strong>, estás en un momento favorable para aprovechar nuevas oportunidades.
+            </div>
+
+            <a href="/limpiar" class="btn-action">
+                🔄 Consultar de nuevo
+            </a>
+
+            <div class="card-footer">
+                Las estrellas te han hablado hoy: {{ session['nombre'] }}.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
